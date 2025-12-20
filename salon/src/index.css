@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF9F4;
+  --color-blush: #F7D8E2;
+  --color-lavender: #D9D4E9;
+  --color-neutral: #F5F0EC;
+  --color-text-dark: #5A4A4E;
+
+  /* Font Family - using system fonts for now, but can add custom ones later */
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-serif: "Playfair Display", "serif";
+  /* Good for headers if we add it */
+}
+
+/* Custom Utilities or Base Styles */
+@layer base {
+  body {
+    @apply bg-transparent text-text-dark font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
