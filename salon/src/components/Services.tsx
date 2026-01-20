@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaSpa, FaMagic, FaUserTie, FaGem, FaGift } from 'react-icons/fa';
@@ -35,7 +35,7 @@ const services = [
 
 const Services = () => {
     const sectionRef = useRef(null);
-    const cardsRef = useRef([]);
+    const cardsRef = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
         const el = sectionRef.current;
@@ -57,7 +57,7 @@ const Services = () => {
         );
     }, []);
 
-    const addToRefs = (el) => {
+    const addToRefs = (el: HTMLDivElement | null) => {
         if (el && !cardsRef.current.includes(el)) {
             cardsRef.current.push(el);
         }
